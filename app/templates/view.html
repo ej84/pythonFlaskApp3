@@ -2,18 +2,18 @@
 {% block content %}
 
 <div class="card" class="m-5 p-2">
-    <h5 class="card-title">{{ name.Name }} - {{ name.Team }}</h5>
+    <h5 class="card-title">{{ player.Name }} - {{ player.Team }}</h5>
 
     <ul class="list-group list-group-flush">
-        <li class="list-group-item"><strong>Height:</strong> {{ name.Height_inches }}</li>
-        <li class="list-group-item"><strong>Weight:</strong> {{ name.Weight_lbs }}</li>
-        <li class="list-group-item"><strong>Age:</strong> {{ name.Age }}</li>
+        <li class="list-group-item"><strong>Height:</strong> {{ player.Height_inches }}</li>
+        <li class="list-group-item"><strong>Weight:</strong> {{ player.Weight_lbs }}</li>
+        <li class="list-group-item"><strong>Age:</strong> {{ player.Age }}</li>
     </ul>
     <div class="card-body">
-        <a href="/edit/{{name.id}}" class="card-link btn btn-primary">edit</a>
+        <a href="/edit/{{player.id}}" class="card-link btn btn-primary">edit</a>
     </div>
 </div>
-<form action="/delete/{{name.id}}" method="post"><button type="submit" class="btn btn-danger">Delete</button></form>
+<form action="/delete/{{player.id}}" method="post"><button type="submit" class="btn btn-danger">Delete</button></form>
 
 
 {% endblock %}

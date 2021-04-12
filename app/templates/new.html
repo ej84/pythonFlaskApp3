@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
-<form action="/names/new" method="POST">
+<form action="/players/new" method="POST">
     <div class="row">
         <div class="col">
             <label for="Name">Player Name</label>
-            <input id="Name" type="text" class="form-control" placeholder="Name" name="Name">
+            <input id="Name" type="text" class="form-control" placeholder="Player Name" name="Name">
         </div>
         <div class="col">
             <label for="Team">Team</label>
@@ -34,7 +34,8 @@
                    name="Age">
         </div>
     </div>
-    <button type="submit" class="btn btn-success">Success</button>
+    <div class="row"><div class="col"></div></div>
+    <button type="submit" class="btn btn-success">Submit</button>
 
 </form>
 

@@ -1,38 +1,36 @@
 {% extends "layout.html" %}
 {% block content %}
-<form action="/edit/{{name.id}}" method="post">
+<form action="/edit/{{player.id}}" method="post">
     <div class="row">
         <div class="col">
             <label for="Name">Player Name</label>
-            <input id="Name" type="text" class="form-control" placeholder="Player Name" name="Name" value="{{name.Name}}">
+            <input id="Name" type="text" class="form-control" placeholder="Player Name" name="Name" value="{{player.Name}}">
         </div>
         <div class="col">
             <label for="Team">Team</label>
-            <input id="Team" type="text" class="form-control" placeholder="Team"
-                   name="Team" value="{{name.Team}}">
+            <input id="Team" type="text" class="form-control" placeholder="Team" name="Team" value="{{player.Team}}">
         </div>
         <div class="col">
             <label for="Position">Position</label>
-            <input id="Position" type="text" class="form-control" placeholder="Position" name="Position" value="{{name.Position}}">
+            <input id="Position" type="text" class="form-control" placeholder="Position" name="Position" value="{{player.Position}}">
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            <label for="Height_inches">Height Inches</label>
-            <input id="Height_inches" type="text" class="form-control" placeholder="Height_inches" name="Height_inches" value="{{name.Height_inches}}">
+            <label for="Height_inches">Height</label>
+            <input id="Height_inches" type="text" class="form-control" placeholder="Height" name="Height_inches" value="{{player.Height_inches}}">
         </div>
         <div class="col">
-            <label for="Weight_lbs">Weight lbs</label>
-            <input id="Weight_lbs" type="text" class="form-control" placeholder="Weight_lbs" name="Weight_lbs" value="{{name.Weight_lbs}}">
+            <label for="Weight_lbs">Weight</label>
+            <input id="Weight_lbs" type="text" class="form-control" placeholder="Weight" name="Weight_lbs" value="{{player.Weight_lbs}}">
         </div>
     </div>
     <div class="row">
         <div class="col">
             <label for="Age">Age</label>
 
-            <input id="Age" type="text" class="form-control" placeholder="Age"
-                   name="Age" value="{{name.Age}}">
+            <input id="Age" type="text" class="form-control" placeholder="Age" name="Age" value="{{player.Age}}">
         </div>
     <button type="submit" class="btn btn-success">Save</button>
     </div>

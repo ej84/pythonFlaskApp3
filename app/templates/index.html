@@ -12,14 +12,14 @@
     </tr>
     </thead>
     <tbody>
-    {% for city in cities %}
+    {% for player in players %}
     <tr>
-        <td><a href="view/{{city.id}}">{{ city.fldName }}</a></td>
-        <td>{{ name.Team }}</td>
-        <td>{{ name.Position }}</td>
-        <td>{{ name.Height_inches }}</td>
-        <td>{{ name.Weight_lbs }}</td>
-        <td>{{ name.Age }}</td>
+        <td><a href="view/{{player.id}}">{{ player.Name }}</a></td>
+        <td>{{ player.Team }}</td>
+        <td>{{ player.Position }}</td>
+        <td>{{ player.Height_inches }}</td>
+        <td>{{ player.Weight_lbs }}</td>
+        <td>{{ player.Age }}</td>
     </tr>
     {% endfor %}
     </tbody>
