@@ -1,23 +1,51 @@
-from flask import current_app as app, Flask
-from flask import render_template
+from flask import current_app as app
+from flask import redirect, render_template, url_for
 
-app = Flask(__name__)
+from .forms import ContactForm, SignupForm
 
-@app.route('/')
+
+@app.route("/")
 def home():
     """Landing page."""
-    nav = [
-        {'name': 'Home', 'url': 'https://example.com/1'},
-        {'name': 'About', 'url': 'https://example.com/2'},
-        {'name': 'Pics', 'url': 'https://example.com/3'}
-    ]
     return render_template(
-        'home.html',
-        nav=nav,
-        title="Jinja Demo Site",
-        description="Smarter page templates with Flask & Jinja."
+        "index.jinja2",
+        template="home-template",
+        title="Flask-WTF tutorial"
     )
 
 
-if __name__ == '__main__':
-    app.run(debug=False)
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    """Standard `contact` form."""
+    form = ContactForm()
+    if form.validate_on_submit():
+        return redirect(url_for("success"))
+    return render_template(
+        "contact.jinja2",
+        form=form,
+        template="form-template",
+        title="Contact Form"
+    )
+
+
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+    """User sign-up form for account creation."""
+    form = SignupForm()
+    if form.validate_on_submit():
+        return redirect(url_for("success"))
+    return render_template(
+        "signup.jinja2",
+        form=form,
+        template="form-template",
+        title="Signup Form"
+    )
+
+
+@app.route("/success", methods=["GET", "POST"])
+def success():
+    """Generic success page upon form submission."""
+    return render_template(
+        "success.jinja2",
+        template="success-template"
+    )
